@@ -28,10 +28,10 @@ For example, consider a network that defines the traffic lights at a pedestrian 
  - Green
  - Pending Pedestrians
 
-The network's state will be `Green` until a pedestrian Triggers `Crossing`. An equation will then check if the `Green` state has been active for long enough. If it has, then the odds of moving to `Yellow` are 100%. If it hasn't been long enough, then the probability of transitioning to `Pending Pedestrians` is 100%. Once in either the `Yellow` or `Red` state, a Trigger such as 'timer-check' might fire every second. Every time `timer-check` fires, the state will only change if enough time has passed for pedestrians to have crossed.
+The network's state will be `Green` until a pedestrian Triggers `Crossing`. An equation will then check if the `Green` state has been active for long enough. If it has, then the odds of moving to `Yellow` are 100%. If it hasn't been long enough, then the probability of transitioning to `Pending Pedestrians` is 100%. Once in either the `Yellow` or `Red` state, a Trigger such as 'timer-check' might fire every second. Every time `timer-check` fires, the state will only change back to `Green` if enough time has passed for pedestrians to have crossed.
 
 #### How to Configure the Network
-List all of the states your application needs. Then consider the relationships between those states in order to determine your system's Trigger events. Create a connection by assigning a weight to each Trigger that could a state change.
+List all of the states your application needs. Then consider the relationships between those states in order to determine your system's Trigger events. Create a connection by assigning a weight to every way that a Trigger can change a given state.
 
 Weights can be as simple or dynamic as you need. For example, a dice will have 6 states, 1 Trigger (`roll`), and each state has a hard coded weight of 16.66%. A more complex system might use a lamda equation to load a weight from a file (this latter example is unusual, but not impossible).
 
