@@ -33,7 +33,7 @@ The network's state will be `Green` until a pedestrian Triggers `Crossing`. An e
 #### How to Configure the Network
 List all of the states your application needs. Then consider the relationships between those states in order to determine your system's Trigger events. Create a connection by assigning a weight to every way that a Trigger can change a given state.
 
-Weights can be as simple or dynamic as you need. For example, a dice will have 6 states, 1 Trigger (`roll`), and each state has a hard coded weight of 16.66%. A more complex system might use a lamda equation to load a weight from a file (this latter example is unusual, but not impossible).
+Weights can be as simple or dynamic as you need. For example, a dice will have 6 states, 1 Trigger (`roll`), and each state-connection (all 36 of them [6X6]) has a hard coded weight of 16.66%. A more complex system might use a lamda equation to load a weight from a file (this latter example is unusual, but not impossible).
 
 There are three approaches you can use to define a network:
 
