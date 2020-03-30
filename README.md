@@ -47,11 +47,13 @@ Note that this tool is still in an Alpha development state, and subject to serio
 
 
 ##### 2) Object Oriented attributes
-- Create a class which derives from 'Network'.
+- Create a class which derives from `Network`.
 - Define each State as a *property* of the new class.
 - Use attributes on the State properties to define the relationships between them.
 
-In the below example, `CustomNetwork` has 4 states. `StartTestState` (or `Start`) will **unconditionally** transition to `Decision1TestState` or `Decision2TestState`, when either the `Left` or `Right` Trigger is fired (respectively). When in `D1` or `D2`, the `Next` event would have to fire for things to change - however, this time, the transitioned-to State depends on what `StateVisitCount("D2")` evaluates to. `StateVisitCount()` would be present elsewhere in the class, and is dynamically compiled at runtime.
+In the below example, `CustomNetwork` has 4 states.
+`StartTestState` (or `Start`) will **unconditionally** transition to `Decision1TestState` or `Decision2TestState`, when either the `Left` or `Right` Trigger is fired (respectively).
+When in `D1` or `D2`, the `Next` event would have to fire for things to change. However, this time, the transitioned-to State depends on what `StateVisitCount("D2")` evaluates to. `StateVisitCount()` would be present elsewhere in the class, and is dynamically compiled at runtime.
 
 ```csharp
   public class CustomNetwork : Network
